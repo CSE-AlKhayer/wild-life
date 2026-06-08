@@ -1,0 +1,404 @@
+/* Start Variables */
+:root {
+    --main_color: rgb(38, 207, 207);
+    --secondery_color: #2c4755;
+    --section_padding: 60px;
+    --section_background: #c2c2c2;
+    --p_color: #898989
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Fira Sans", sans-serif;
+}
+@media (min-width: 768px)
+{
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px)
+{
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px)
+{
+    .container {
+        width: 1170px;
+    }
+}
+.container {
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* End Global Rules */
+/* Start Common use */
+.special_heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special_heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #898989
+}
+.top_bot_col {
+    padding-top: var(--section_padding);
+    padding-bottom: var(--section_padding);
+    background-color: var(--section_background);
+}
+.top_bot {
+    padding-top: var(--section_padding);
+    padding-bottom: var(--section_padding);
+}
+.grid_style {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+@media (max-width: 767px) {
+    .special_heading {
+        font-size: 60px;
+    }
+    .special_heading + p {
+        margin: -20px;
+    }
+    .Aesthetics .Aesthetics_Content .sal {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact .info .label,
+    .contact .info .link {
+        font-size: 25px;
+    }
+}
+/* End Common use */
+/* Start Header */
+.header {
+    padding: 20px;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    width: 40px
+}
+.header .links {
+    position: relative;
+}
+.header .icon {
+    position: relative;
+    min-width: 200px;
+    min-height: 20px;
+}
+.header .icon .tri {
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent var(--secondery_color) transparent transparent;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    transition-duration: 1s; 
+}
+.header .icon:hover {
+    animation-name: change_color;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.header .links:hover .icon .tri {
+    right: 90%;
+    bottom: -20px;
+    transform: rotate(-90deg);
+}
+.header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+}
+.header .links:hover ul {
+    display: block;
+    z-index: 1;
+}
+.header .links ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #020202;
+    transition-delay: 0.5s;
+    transition: 0.5s;
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #eee;
+}
+.header .links ul li a:hover{
+    padding-left: 20px;
+}
+@keyframes change_color {
+    from{
+        width: 0;
+        background-color: white;
+    }
+    to {
+        width: 100%;
+        background-color: var(--secondery_color);
+    }
+}
+/* End Header */
+/* Start Wild_life Section */
+.Wild_life {
+    background-image: url(../imgs/Wild_Life.jpg);
+    background-size: cover;
+    height: calc(100vh - 85.71px);
+    position: relative;
+}
+.Wild_life .intro_text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    width: 250px;
+    max-width: 100%;
+
+}
+.Wild_life .intro_text h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 45px;
+    color: var(--main_color);
+}
+.Wild_life .intro_text p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+/* End Wild_life Section */
+/* Start Introduction Section */
+.Introduction .feat {
+    padding: 20px;
+    text-align: center;
+}
+.Introduction .feat i {
+    color: var(--main_color);
+    font-size: 60px;
+}
+.Introduction .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+.Introduction .feat p {
+    line-height: 1.8;
+    font-size: 18px;
+    color: var(--p_color);
+}
+/* End Introduction Section */
+/* Start Aesthetics */
+.Aesthetics .Aesthetics_Content {
+    margin-top: 100px;
+}
+.Aesthetics .Aesthetics_Content .sal {
+    display: flex;
+    margin-bottom: 40px;
+}
+.Aesthetics .Aesthetics_Content .sal i {
+    color: var(--main_color);
+    font-size: 40px;
+    flex-basis: 60px;
+}
+.Aesthetics .Aesthetics_Content .sal .text {
+    flex: 1;
+}
+.Aesthetics .Aesthetics_Content .sal .text h3 {
+    margin: 0 0 20px;
+}
+.Aesthetics .Aesthetics_Content .sal .text p {
+    color: var(--p_color);
+    font-weight: 300;
+    line-height: 1.8;
+}
+.Aesthetics .Aesthetics_Content .image {
+    text-align: center;
+    position: relative;
+}
+.Aesthetics .Aesthetics_Content .image img {
+    width: 250px;
+    height: 367.83px;
+}
+.Aesthetics .Aesthetics_Content .image::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    background-color: var(--secondery_color);
+    width: 150px;
+    height: calc(100% + 80px);
+    top: -40px;
+    position: absolute;
+    z-index: -1;
+}
+@media (max-width: 1199px) {
+    .image-cloumn {
+        display: none;
+    }
+}
+/* End Aesthetics */
+/* Start Species */
+.Species .Species_Content {
+    margin-top: 100px;
+}
+.Species .Species_Content .card {
+    background-color: white;
+}
+.Species .Species_Content .card img {
+    width: 100%;
+    height: 50%;
+}
+.Species .Species_Content .card .info {
+    padding: 20px;
+}
+.Species .Species_Content .card .info h3 {
+    margin: 0;
+}
+.Species .Species_Content .card .info p {
+    color: var(--p_color);
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+/* End Species */
+/* Start Events */
+.Events .Events_Content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 991px) {
+    .Events .Events_Content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.Events .Events_Content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+@media (max-width: 991px) {
+    .Events .Events_Content .image {
+        margin: 0 auto 40px;
+    }
+}
+.Events .Events_Content .image::before {
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 80px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.Events .Events_Content .image::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 300px;
+    border-left: 80px solid var(--main_color);
+    border-bottom: 80px solid var(--main_color);
+    right: -120px;
+    top: -40px;
+    z-index: -1;
+}
+@media (max-width: 991px) {
+    .Events .Events_Content .image::before,
+    .Events .Events_Content .image::after {
+        display: none;
+    }
+}
+.Events .Events_Content .image img {
+    max-width: 250px;
+    height: 350px;
+}
+.Events .Events_Content .text {
+    flex-basis: calc(100% - 400px);
+}
+.Events .Events_Content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+.Events .Events_Content .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main_color);
+}
+.Events .Events_Content .text p:last-of-type {
+    line-height: 1.8;
+    color: var(--p_color);
+}
+/* End Events */
+/* Start Contact */
+.contact .info {
+    text-align: center;
+}
+.contact .info .label {
+    font-size: 35px; 
+    font-weight: 800;
+    color: var(--secondery_color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main_color);
+    text-decoration: none;;
+}
+.contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.contact .info .social i {
+    margin-left: 10px;
+    color: var(--main_color);
+}
+/* End Contact */
+/* Start Footer */
+.footer {
+    background-color: var(--main_color);
+    color: #020202;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+}
+.footer span {
+    font-weight: bold;
+    color: var(--secondery_color); 
+}
+/* End Footer */
